@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
+using Cinemachine;
 
 public class Player : MonoBehaviour
 {
@@ -20,7 +21,7 @@ public class Player : MonoBehaviour
     public Ease ease = Ease.OutBack;
 
     private float _currentSpeed;
-    private bool _isRunning = false;
+    private bool _isRunning = false;   
 
     private void Update()
     {
