@@ -69,16 +69,16 @@ public class Player : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.UpArrow))
         {
             myRigidbody.velocity = Vector2.up * forceJump;
-            myRigidbody.transform.localScale = Vector2.one;
+            //myRigidbody.transform.localScale = Vector2.one;
 
-            DOTween.Kill(myRigidbody.transform);
-            HandleScaleJump();
+            //DOTween.Kill(myRigidbody.transform);
+            //HandleScaleJump();
         }
     }
 
-    private void HandleScaleJump()
-    {
-        myRigidbody.transform.DOScaleY(jumpScaleY, animationDuration).SetLoops(2, LoopType.Yoyo).SetEase(ease);
-        myRigidbody.transform.DOScaleX(jumpScaleX, animationDuration).SetLoops(2, LoopType.Yoyo).SetEase(ease);
-    }
+    //private void HandleScaleJump()
+    //{
+    //    myRigidbody.transform.DOScaleY(jumpScaleY, animationDuration).SetLoops(2, LoopType.Yoyo).SetEase(ease);
+    //    myRigidbody.transform.DOScaleX(jumpScaleX, animationDuration).SetLoops(2, LoopType.Yoyo).SetEase(ease);
+    //}
 }
