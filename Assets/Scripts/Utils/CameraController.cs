@@ -11,7 +11,6 @@ public class CameraController : MonoBehaviour
     {
         if (player != null)
         {
-            Debug.Log(playerCam);
             Transform playerTransform = player.transform;
             playerCam.LookAt = playerTransform;
             playerCam.Follow = playerTransform;
