@@ -20,15 +20,39 @@ public class Player : MonoBehaviour
     public float animationDuration = .3f;
     public Ease ease = Ease.OutBack;
     public string boolRun = "Run";
+    public string triggerDeath = "Death";
     public Animator animator;
 
     private float _currentSpeed;
-    private bool _isRunning = false;   
+    private bool _isRunning = false;
+    private bool _isPlayerDead = false;
+
+    private HealthBase _healthBase;
+
+    private void Awake()
+    {
+        _healthBase = GetComponent<HealthBase>();
+
+        if (_healthBase != null)
+        {
+            _healthBase.OnKill += OnPlayerKill;
+        }
+    }
+
+    private void OnPlayerKill()
+    {
+        _healthBase.OnKill -= OnPlayerKill;
+        _isPlayerDead = true;
+        animator.SetTrigger(triggerDeath);
+    }
 
     private void Update()
     {
-        HandleJump();
-        HandleMovement();
+        if (!_isPlayerDead)
+        { 
+            HandleJump();
+            HandleMovement();
+        }
     }
 
     private void HandleMovement()
@@ -69,16 +93,11 @@ public class Player : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.UpArrow))
         {
             myRigidbody.velocity = Vector2.up * forceJump;
-            //myRigidbody.transform.localScale = Vector2.one;
-
-            //DOTween.Kill(myRigidbody.transform);
-            //HandleScaleJump();
         }
     }
 
-    //private void HandleScaleJump()
-    //{
-    //    myRigidbody.transform.DOScaleY(jumpScaleY, animationDuration).SetLoops(2, LoopType.Yoyo).SetEase(ease);
-    //    myRigidbody.transform.DOScaleX(jumpScaleX, animationDuration).SetLoops(2, LoopType.Yoyo).SetEase(ease);
-    //}
+    public void DestroyMe()
+    {
+        Destroy(gameObject);
+    }
 }

@@ -1053,6 +1053,7 @@ MonoBehaviour:
   animationDuration: 0.3
   ease: 27
   boolRun: Run
+  triggerDeath: Death
   animator: {fileID: 6413013834153556191}
 --- !u!114 &5588597178862000960
 MonoBehaviour:
@@ -1068,7 +1069,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startLife: 10
   destroyOnKill: 1
-  delayToKill: 1
+  delayToKill: 3
   _flashColor: {fileID: 3701392160046399782}
 --- !u!114 &3701392160046399782
 MonoBehaviour:
