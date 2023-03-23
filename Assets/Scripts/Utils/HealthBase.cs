@@ -6,15 +6,12 @@ using UnityEngine;
 public class HealthBase : MonoBehaviour
 {
     public Action OnKill;
-
     public int startLife = 10;
-
     public bool destroyOnKill = false;
     public float delayToKill = 0f;
 
     private int _currentLife;
     private bool _isDead = false;
-
     private FlashColor _flashColor;
 
     private void Awake()
