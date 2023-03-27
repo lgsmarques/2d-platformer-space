@@ -77,8 +77,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   prefabProjectile: {fileID: 107476262765014422, guid: db3fac4bd1c44c449a1598535d504516, type: 3}
-  positionToShoot: {fileID: 1062053469}
   timeBetweenShoot: 0.3
+  positionToShoot: {fileID: 1062053469}
   playerSideReference: {fileID: 8007466312498025151}
 --- !u!1 &308605349632925946
 GameObject:
@@ -1044,16 +1044,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   myRigidbody: {fileID: -2215734856792286388}
-  speed: 15
-  speedRun: 25
-  forceJump: 25
-  friction: {x: 0.1, y: 0}
-  jumpScaleY: 1
-  jumpScaleX: 1
-  animationDuration: 0.3
-  ease: 27
-  boolRun: Run
-  triggerDeath: Death
+  soPlayerSetup: {fileID: 11400000, guid: a736d631cc0d21f4ab1e1e6b07ce2064, type: 2}
   animator: {fileID: 6413013834153556191}
 --- !u!114 &5588597178862000960
 MonoBehaviour:
@@ -1070,7 +1061,6 @@ MonoBehaviour:
   startLife: 10
   destroyOnKill: 1
   delayToKill: 3
-  _flashColor: {fileID: 3701392160046399782}
 --- !u!114 &3701392160046399782
 MonoBehaviour:
   m_ObjectHideFlags: 0
